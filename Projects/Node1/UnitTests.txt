@@ -1,0 +1,50 @@
+/**
+ * UnitTests:  Unit test documentation
+ *
+ * HISTORY
+ * Created by Mark on 6/11/2015.
+ */
+
+
+Preparation:
+
+0. Assumes you have node.js properly installed on your system. (see https://nodejs.org/ )
+1. Install the node.js files to a project directory  (ex: C:\Users\Mark\Node1)
+2. Open a command window and proceed to the install directory from above.
+3. Start up the main node.js application.  (ex: node app.js)
+
+Test 1: InVision Challenge Test
+
+1. This test will automatically run upon startup.  It can also be started and run manually using two separate
+    internet browsers.  Three servers will fire up, one consumer and two producers.
+    The consumer server starts up on port 8282 and the two producer servers fire on 8181 and 8182.  Each server
+    output is logged to the console in on your command window and can be piped anywhere you want from the
+    command line.  The test will run for approximately ten seconds and will log the consumer successfully
+    processing requests from both producers concurrently at a steady rate of 2 rec/sec for a total of 4 rec/sec.
+    The number of producers and the rate of activity can be easily controlled by setting manual variables
+    with in the code.  This can be easily moved to some sort of config file later if desired.  Each producer and
+    consumer will log its own messages upon generating and receiving data.  All messages are logged to the console.
+    As stated above, this test can be easily re-run by stopping the server via cntl-C and restarting the main
+    application as described above.  In addition , this test can also be manually run , as described above, by
+    using two separate internet browsers.  To accomplish this, simply startup each internet browser and enter the
+    urls of http://localhost:8181/starttest for one browswer and the other, http://localhost:8182/starttest.  Be
+    sure to startup both browswers with in a few seconds of each other to produce desired results.  After the test
+    is complete, the browser will report "starttest complete".
+
+Test 2: Producer Server Test
+
+1. To start this test, open your internet browser and enter the url of http://localhost:8181/start.  This will return
+    a random math addition expression like "19+82=".  The random numbers are positive integers ranging from 1 to 100.
+2. The same test can be achieved by using the url of http://localhost:8181/.  In addition, you can use port 8182 to
+    achieve similar results with the second producer server.  All other urls should respond with a 404 error.
+
+Test 3: Consumer Server Test
+
+1. To start this test, open your internet browswer and enter the url of http://localhost:8282/compute?expr=42%2B43%3D.
+    This will return the value of 85.  The consumer can also add any number of positive integers within normal
+    ranges and return a result.  Be sure to encode you url information for other testing.
+2. The same test can be achieved by using the url of http://localhost:8282/?expr=42%2B43%3D.  All other urls should
+    respond with a 404 error, or a 400 error.
+
+
+
